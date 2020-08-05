@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <div class="col">
+
+    <div class="form-group">
+      <label>Post Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Post Title" name="title" [(ngModel)]="title">
+    </div>
+
+    <div class="form-group">
+      <label>Post Content</label>
+      <!-- <ngx-editor [spellcheck]="true" [(ngModel)]="content"></ngx-editor> -->
+      <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="content"></angular-editor>
+      <!-- <input type="text" class="form-control" id="Post content" placeholder="type post content here" name="content" [(ngModel)]="content"> -->
+    </div>
+
+    <div class="form-group float-right">
+      <button (click)="createPost()" class="btn btn-warning round">Submit</button>
+    </div>
+
+  </div>
+</div>
