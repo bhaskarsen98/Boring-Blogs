@@ -1,33 +1,6 @@
-<!-- <div class="container">
-<h1>
-    sign up form
-</h1> 
-
-<form #signupform="ngForm" (ngSubmit)="onSubmit(signupform)">
-    <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input type="text" class="form-control" required name="first_name" [(ngModel)]="first_name">  
-    </div>
-    <div class = "alert alert-danger" *ngIf = "signupform.controls['first_name'].pristine==false && signupform.controls['first_name'].valid==false">
-            First Name is required!
-    </div>
-    <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input type="text" class="form-control" name="last_name" [(ngModel)]="last_name">
-    </div>
-
-    <button class="btn btn-success" type="submit" [disabled] = "signupform.control.invalid==true">
-        Submit 
-    </button>
-
-    pristine : {{signupform.control.pristine}}
-    touched : {{signupform.control.touched}}
-    invalid  : {{signupform.control.invalid}}
-</form>
-</div>   -->
 <div class="row background">
   <div class="col-sm-6 background-left p-5 pb-5">
-    <h1>Don't just think! Blog It!</h1>
+    <h3>Read most inspirnig blogs!</h3>
   </div>
 
   <div class="col-sm-6 background-right p-5 pb-5"> 
