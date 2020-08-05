@@ -12,22 +12,22 @@ import { error } from 'protractor';
 export class EditProfileComponent implements OnInit {
   user: any = {};
   message: string;
-  userId: string;
+  // userId: string;
   constructor() { 
     this.getProfile();
-    this.userId = firebase.auth().currentUser.uid;
+    // this.userId = firebase.auth().currentUser.uid;
   }
 
   ngOnInit(): void {
   }
 
   getProfile(){
-
-    firebase.firestore().collection("users").doc(this.userId).get().then((documentSnapshot) => {
+    let userId = firebase.auth().currentUser.uid;
+    firebase.firestore().collection("users").doc(userId).get().then((documentSnapshot) => {
 
       this.user = documentSnapshot.data();
       this.user.displayName = this.user.firstName + " " + this.user.lastName;
-      this.user.id = this.userId;
+      this.user.id = documentSnapshot.id;
       // console.log(this.user);
       // console.log(documentSnapshot.id);
       // console.log(userId);
@@ -43,9 +43,10 @@ export class EditProfileComponent implements OnInit {
       displayName: this.user.displayName,
       photoURL: this.user.photoURL
     }).then(() => {
-      firebase.firestore().collection("users").doc(this.userId).update({
+      let userId = firebase.auth().currentUser.uid;
+      firebase.firestore().collection("users").doc(userId).update({
         first_name: this.user.displayName.split(' ')[0],
-        last_name: this.user.displayName.spliit(' ')[1],
+        last_name: this.user.displayName.split(' ')[1],
         hobbies: this.user.hobbies,
         interests: this.user.interests,
         bio: this.user.bio
@@ -60,5 +61,3 @@ export class EditProfileComponent implements OnInit {
     })
   }
 }
-// ERROR TypeError: Cannot read property 'photoUrl' of undefined
-//     at EditProfileComponent_Template (edit-profile.component.html:1
