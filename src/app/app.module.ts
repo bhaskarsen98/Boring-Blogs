@@ -22,14 +22,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 let firebaseConfig = {
-  apiKey: "AIzaSyCzhlJ2nOaTtThGmMFuf_lEV18jjRyNOao",
-  authDomain: "scribe-60b03.firebaseapp.com",
-  databaseURL: "https://scribe-60b03.firebaseio.com",
-  projectId: "scribe-60b03",
-  storageBucket: "scribe-60b03.appspot.com",
-  messagingSenderId: "1062258535463",
-  appId: "1:1062258535463:web:a37ab255958e50a0dbb202",
-  measurementId: "G-XPGEW3VCPB"
+  //your firebase config goes here 
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
